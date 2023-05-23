@@ -1,0 +1,78 @@
+<div mat-dialog-title>
+    <h1> formulaire </h1>
+</div>
+<form>
+    <div mat-dialog-content class="content">
+        <!-- les vehicules -->
+        <fieldset>
+            <legend><h4>vehicules</h4></legend>
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Type</mat-label>
+                    <input matInput type="text" placeholder="Ex. voiture">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Marque</mat-label>
+                    <input matInput type="text" placeholder="Ex. Audi">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Modele</mat-label>
+                    <input matInput type="text" placeholder="Ex. A8">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Puissance</mat-label>
+                    <input matInput type="text" placeholder="Ex. 561 ch">
+                </mat-form-field>
+            </div>
+        </fieldset>
+        <!-- garage -->
+        
+        <fieldset>
+            <legend><h4>garage</h4></legend>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>quel garage?</mat-label>
+                    <mat-select>
+                        <mat-option>
+                            
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Adresse</mat-label>
+                    <input matInput type="text" placeholder="Ex. hay riad">
+                </mat-form-field>
+            </div>
+        </fieldset>    
+        
+        <!-- client -->
+        <fieldset>
+            <legend><h4>client</h4></legend>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom</mat-label>
+                    <input matInput type="text" placeholder="Ex. Naciri">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Prenom</mat-label>
+                    <input matInput type="text" placeholder="Ex. Amal">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field class="adr-client" appearance="outline">
+                    <mat-label>Adresse</mat-label>
+                    <input matInput type="text" placeholder="Ex. quartier charaf">
+                </mat-form-field>
+            </div>
+        </fieldset>
+        
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-raised-button>Cancel</button>
+        <button mat-raised-button type="submit" color="primary">Save</button>
+    </div>
+</form>
