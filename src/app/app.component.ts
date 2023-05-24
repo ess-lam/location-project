@@ -9,6 +9,7 @@ import { AddComponent } from './operations/add/add.component';
 })
 export class AppComponent {
   title = 'location-project';
+  static _dialog: any;
 
   constructor(private _dialog: MatDialog) {}
 

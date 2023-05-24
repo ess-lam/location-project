@@ -18,13 +18,17 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { ListComponent } from './operations/list/list.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { EditComponent } from './operations/edit/edit.component';
 
 @NgModule({ 
   declarations: [
     AppComponent,
-    AddComponent
+    AddComponent,
+    ListComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
