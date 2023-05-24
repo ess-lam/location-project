@@ -7,58 +7,58 @@
     <table mat-table [dataSource]="dataSource">
         <!-- ID Column -->
         <ng-container matColumnDef="vType">
-            <th mat-header-cell *matHeaderCellDef> Type </th>
+            <th mat-header-cell *matHeaderCellDef style="background-color: #6231b6;"> Type </th>
             <td mat-cell *matCellDef="let row"> {{row.vType}} </td>
         </ng-container>
     
         <!-- Progress Column -->
         <ng-container matColumnDef="vMarque">
-            <th mat-header-cell *matHeaderCellDef > Marque </th>
+            <th mat-header-cell *matHeaderCellDef style="background-color: #6231b6;"> Marque </th>
             <td mat-cell *matCellDef="let row"> {{row.vMarque}} </td>
         </ng-container>
     
         <!-- Name Column -->
         <ng-container matColumnDef="vModele">
-            <th mat-header-cell *matHeaderCellDef > Modele </th>
+            <th mat-header-cell *matHeaderCellDef style="background-color: #6231b6;"> Modele </th>
             <td mat-cell *matCellDef="let row"> {{row.vModele}} </td>
         </ng-container>
     
         <!-- Fruit Column -->
         <ng-container matColumnDef="vPuissance">
-            <th mat-header-cell *matHeaderCellDef > Puissance </th>
+            <th mat-header-cell *matHeaderCellDef style="background-color: #6231b6;"> Puissance </th>
             <td mat-cell *matCellDef="let row"> {{row.vPuissance}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gNom">
-            <th mat-header-cell *matHeaderCellDef > Nom Garage </th>
+            <th mat-header-cell *matHeaderCellDef style="background-color: #6231b6;"> Nom Garage </th>
             <td mat-cell *matCellDef="let row"> {{row.gNom}} </td>
         </ng-container>
         <ng-container matColumnDef="gAdresse">
-            <th mat-header-cell *matHeaderCellDef > Adresse Garage </th>
+            <th mat-header-cell *matHeaderCellDef style="background-color: #6231b6;"> Adresse Garage </th>
             <td mat-cell *matCellDef="let row"> {{row.gAdresse}} </td>
         </ng-container>
         <ng-container matColumnDef="cNom">
-            <th mat-header-cell *matHeaderCellDef > Nom Client </th>
+            <th mat-header-cell *matHeaderCellDef style="background-color: #6231b6;"> Nom Client </th>
             <td mat-cell *matCellDef="let row"> {{row.cNom}} </td>
         </ng-container>
         <ng-container matColumnDef="cPrenom">
-            <th mat-header-cell *matHeaderCellDef >Prenom Client </th>
+            <th mat-header-cell *matHeaderCellDef style="background-color: #6231b6;">Prenom Client </th>
             <td mat-cell *matCellDef="let row"> {{row.cPrenom}} </td>
         </ng-container>
         <ng-container matColumnDef="cAdresse">
-            <th mat-header-cell *matHeaderCellDef > Adresse Client </th>
+            <th mat-header-cell *matHeaderCellDef style="background-color: #6231b6;"> Adresse Client </th>
             <td mat-cell *matCellDef="let row"> {{row.cAdresse}} </td>
         </ng-container>
 
         <!-- Action Column -->
         <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <th mat-header-cell *matHeaderCellDef style="background-color: #6231b6;"> Actions </th>
             <td mat-cell *matCellDef="let row"> 
                 <button mat-button color="primary" (click)="edit(row.id)">
-                    edit
+                    Edit
                 </button> 
                 <button mat-button (click)="delete(row.id)" color="warn">
-                    delete
+                    Delete
                 </button>
             </td>
         </ng-container>
@@ -76,12 +76,19 @@
 
 </div>
 
-<div>
+<!-- <div>
     <ul>
         <li *ngFor="let data of theData |async">
             client: {{data.cNom}}, {{data.cPrenom}}, {{data.cAdresse}} |||
             garage: {{data.gNom}}, {{data.gAdresse}} ||| 
             voiture: {{data.vType}}, {{data.vMarque}}, {{data.vModele}}, {{data.vPuissance}}
+            <button mat-button color="primary" (click)="edit(data.id)">
+                edit
+            </button> 
+            <button mat-button (click)="delete(data.id)" color="warn">
+                delete
+            </button>
+
         </li>
     </ul>
-</div>
+</div> -->

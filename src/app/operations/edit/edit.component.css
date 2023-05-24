@@ -1,0 +1,23 @@
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.content {
+    padding-top: 10px;
+}
+
+fieldset {
+    border: none;
+    border-top: solid 1px;
+}
+
+h4 {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.adr-client {
+    width: 100%;
+}

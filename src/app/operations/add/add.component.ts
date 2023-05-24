@@ -30,10 +30,9 @@ export class AddComponent {
     try{
       const collectionInstance = collection(this.firestore, 'location');
       const docRef = doc(collectionInstance);
-      this.addForm.patchValue({'id': docRef.id});
+      // this.addForm.patchValue({'id': docRef.id});
       const values = this.addForm.value;
       await addDoc(collectionInstance, values);
-      //{'id': docRef.id}
     } catch (error) {
       console.error('Error adding document:', error);
     }

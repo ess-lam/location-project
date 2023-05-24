@@ -2,7 +2,8 @@ import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { initializeApp } from 'firebase/app';
+import { Firestore, getFirestore, collection, collectionData, doc,deleteDoc, query, where, getDocs } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 import { MatDialog } from '@angular/material/dialog';
@@ -41,22 +42,41 @@ export class ListComponent implements AfterViewInit{
   static _dialog: any;
 
   constructor(private firestore: Firestore, private _dialog: MatDialog) { 
+    // this.firestore = getFirestore();
+
     this.dataSource = new MatTableDataSource();
     const collectionInstance = collection(this.firestore, 'location');
-    this.theData = collectionData(collectionInstance);
+    this.theData = collectionData(collectionInstance,{idField:'id'});
     this.theData.subscribe( data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     })
   }
 
-  edit(id:number){
-    this._dialog.open(EditComponent);
+  edit(id:string){
+    this._dialog.open(EditComponent,{data: {id: id}});
   }
 
-  delete(id:number){
-
+  async delete(idToDelete:string){
+    await deleteDoc( doc(this.firestore,'location', idToDelete) )
+    .then(()=>{
+      console.log('data deleted')
+    })
   }
+
+  // async delete(idToDelete:string){
+    
+  //   const collectionPath = 'location'; // Replace with your collection path
+  //   const queryCondition = where('id', '==', idToDelete); // Replace with your desired query conditions
+  //   const q = query(collection(this.firestore, collectionPath), queryCondition);
+  //   const querySnapshot = await getDocs(q);
+
+  //   querySnapshot.forEach(async (documentSnapshot) => {
+  //     const documentRef = doc(this.firestore, collectionPath, documentSnapshot.id);
+  //     await deleteDoc(documentRef);
+  //   });
+    
+  // }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
